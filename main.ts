@@ -1,7 +1,7 @@
 const fs=require("node:fs"),p=require("node:path");
 const I=process.env.MAKEFUN_INPUT_DIR||"/input",O=process.env.MAKEFUN_OUTPUT_DIR||"/output";
 const T={0:[0,0,0],1:[1,0,1],2:[4,0,1],3:[0,1,0],4:[0,1,2],5:[0,2,2],6:[0,2,3],7:[0,3,3]};
-for(let o=16;o<35;o++)T[o]=[0,o==23||o==27?1:2,1];
+for(let o=16;o<35;o++)if(o!=31)T[o]=[0,o==23||o==27?1:2,1];
 T[48]=[2,0,0];T[49]=[2,1,0];T[50]=[2,1,0];T[51]=[2,0,0];T[52]=[0,0,0];T[64]=[0,1,1];T[65]=[0,2,0];T[80]=[0,1,0];T[81]=[0,1,0];T[82]=[0,0,1];T[83]=[0,1,0];
 function run(P,G){
 const n=P.length,D=new Int32Array(256);let s=0;const C=new Int32Array(64);let c=0;const M=new Int32Array(256),U=new Uint8Array(65536);let l=0,q=0,x=0,t=0;
